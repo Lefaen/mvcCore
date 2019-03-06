@@ -1,0 +1,3 @@
+<?php
+    component::includeComponent('listUsers');
+?>

@@ -3,7 +3,7 @@
 class testComponentView extends viewBase
 {
     public function show($data){
-        print_r($data);
+        //print_r($data);
     }
 
     public function __construct($data = '')

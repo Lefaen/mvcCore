@@ -1,8 +1,7 @@
 <?php
 
 class modelBase {
-    private $data = 'test';
-
+    private $data = null;
 
     public function getData(){
         return $this->data;

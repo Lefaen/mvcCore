@@ -20,9 +20,13 @@ class route
         self::setUrl($_SERVER['REQUEST_URI']);
         $url = self::$url;
 
+        $url = explode('?', $url);
+        $url = $url[0];
         $url = str_replace('/', '', $url);
+
+
         if (file_exists('pages/' . $url) && !empty($url)) {
-            include_once "pages/$url/index.php";
+            require_once "pages/$url/index.php";
         } elseif(!file_exists('pages/' . $url)) {
             self::error404();
         }
