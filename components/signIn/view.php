@@ -8,8 +8,14 @@ class signInView extends viewBase
         ?>
 
         <form action="" method="post">
-            <label>Логин:</label><input type="text" name="login"/>
-            <label>Пароль:</label><input type="password" name="pass"/>
+            <label>
+                Логин:
+                <input type="text" name="login"/>
+            </label>
+            <label>
+                Пароль:
+                <input type="password" name="pass"/>
+            </label>
             <input type="submit" name="send" value="войти"/>
         </form>
 
@@ -17,24 +23,38 @@ class signInView extends viewBase
 
         <?
     }
-    public function logout(){
+
+    public function logout()
+    {
         ?>
 
         <form action="" method="post">
-            <input type="submit" name="logout" value="выйти" />
+            <input type="submit" name="logout" value="выйти"/>
         </form>
 
         <?
 
 
     }
+
     public function profile($data)
     {
         ?>
-        <div><span>Логин:</span><?=$data['login']?></div>
-        <div><span>E-mail:</span><?=$data['email']?></div>
-        <div><span>Права админа:</span><?=$data['admin']?></div>
-        <div><? $this->logout(); ?></div>
+        <div>
+            <span>Логин:</span>
+            <?= $data['login'] ?>
+        </div>
+        <div>
+            <span>E-mail:</span>
+            <?= $data['email'] ?>
+        </div>
+        <div>
+            <span>Права админа:</span>
+            <?= $data['admin'] ?>
+        </div>
+        <div>
+            <? $this->logout(); ?>
+        </div>
         <?
     }
 
@@ -42,10 +62,10 @@ class signInView extends viewBase
     {
         if (isset($_GET['signUp']) && $_GET['signUp'] == true) {
             component::includeComponent('signUp');
-        }else{
-            if(empty($_SESSION['id'])){
+        } else {
+            if (empty($_SESSION['id'])) {
                 $this->signIn();
-            }else{
+            } else {
                 $this->profile($data['user']);
             }
         }

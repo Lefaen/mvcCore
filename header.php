@@ -1,12 +1,16 @@
-<head>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Главная</title>
+        <script src="js/jquery/jquery-3.3.1.js"></script>
+    <head/>
+    <body>
+        <div class="header">
+            header
+            <?php
 
-</head>
+            component::includeComponent('signIn');
 
-<body>
-<div class="header">
-    <?php
-
-    component::includeComponent('signIn');
-
-    ?>
-</div>
+            ?>
+        </div>
+        <div class="main">

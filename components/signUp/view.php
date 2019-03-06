@@ -8,16 +8,25 @@ class signUpView extends viewBase
         ?>
 
         <form action="" method="post">
-            <label>Логин:</label><input type="text" name="login" />
-            <label>Пароль:</label><input type="password" name="pass" />
-            <label>E-mail:</label><input type="text" name="email" />
-            <input type="submit" name="signUp" value="Регистрация" />
+            <label>Логин:
+                <input type="text" name="login"/>
+            </label>
+            <label>
+                Пароль:
+                <input type="password" name="pass"/>
+            </label>
+            <label>
+                E-mail:
+                <input type="text" name="email"/>
+            </label>
+            <input type="submit" name="signUp" value="Регистрация"/>
         </form>
 
         <?
     }
 
-    public function show($data){
+    public function show($data)
+    {
         $this->signUp();
     }
 
